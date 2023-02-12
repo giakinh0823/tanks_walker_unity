@@ -19,7 +19,11 @@ public class Walker : MonoBehaviour
 
     private void Die()
     {
-        Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
     }
 }
